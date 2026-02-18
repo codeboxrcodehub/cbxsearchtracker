@@ -2,7 +2,7 @@
 /**
  * Plugin Name: CBX Search Tracker
  * Description: Tracks WordPress search keywords and shows most searched keywords in admin dashboard.
- * Version: 1.2.0
+ * Version: 1.2.1
  * Author: Codeboxr
  * Text Domain: cbxsearchtracker
  * Domain Path: /languages
@@ -151,6 +151,15 @@ class CBXSearchTracker {
 			"SELECT * FROM {$this->table_name} ORDER BY search_count DESC LIMIT 100"
 		);
 
+		$total_keywords = (int) $wpdb->get_var(
+			"SELECT COUNT(*) FROM {$this->table_name}"
+		);
+
+		$total_searches = (int) $wpdb->get_var(
+			"SELECT SUM(search_count) FROM {$this->table_name}"
+		);
+
+
 		echo '<div class="wrap">';
 		echo '<h1>' . esc_html__( 'Most Searched Keywords', 'cbxsearchtracker' ) . '</h1>';
 
@@ -167,12 +176,24 @@ class CBXSearchTracker {
 		}
 
 
-		// Delete All Button
-		echo '<form method="post" style="margin-bottom:15px;">';
+		echo '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">';
+
+		// LEFT SIDE — Delete All Button
+		echo '<form method="post">';
 		wp_nonce_field('cbx_delete_all_keywords');
 		echo '<input type="hidden" name="cbx_delete_all" value="1" />';
 		echo '<input type="submit" class="button button-primary" value="' . esc_attr__('Delete All Keywords', 'cbxsearchtracker') . '" onclick="return confirm(\'Are you sure you want to delete all keywords?\');" />';
 		echo '</form>';
+
+		// RIGHT SIDE — Total Stats
+		echo '<div style="font-weight:600;">';
+		echo esc_html__('Total Keywords:', 'cbxsearchtracker') . ' ' . esc_html($total_keywords);
+		echo ' | ';
+		echo esc_html__('Total Searches:', 'cbxsearchtracker') . ' ' . esc_html($total_searches);
+		echo '</div>';
+
+		echo '</div>';
+
 
 
 		echo '<table class="widefat striped">';
