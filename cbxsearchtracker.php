@@ -2,10 +2,14 @@
 /**
  * Plugin Name: CBX Search Tracker
  * Description: Tracks WordPress search keywords and shows most searched keywords in admin dashboard.
+ * Plugin URI: https://github.com/codeboxrcodehub/cbxsearchtracker
  * Version: 1.2.1
  * Author: Codeboxr
+ * Author URI:        http://codeboxr.com
  * Text Domain: cbxsearchtracker
  * Domain Path: /languages
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

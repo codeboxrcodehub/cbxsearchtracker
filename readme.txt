@@ -1,5 +1,5 @@
 === CBX Search Tracker ===
-Contributors: codeboxr
+Contributors: codeboxr, manchumahara
 Tags: search, search analytics, keyword tracker, search tracker, admin dashboard
 Requires at least: 5.8
 Tested up to: 6.5
@@ -76,6 +76,7 @@ Currently it tracks all searches. Zero-result filtering can be added in a future
 = 1.2.1 =
 * Added total count for keywords
 * Added total count for total search
+* Added author and licence information
 
 = 1.2.0 =
 * Added delete all feature
