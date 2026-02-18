@@ -4,7 +4,7 @@ Tags: search, search analytics, keyword tracker, search tracker, admin dashboard
 Requires at least: 5.8
 Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: cbxsearchtracker
@@ -73,6 +73,8 @@ Currently it tracks all searches. Zero-result filtering can be added in a future
 3. Empty state when no searches recorded
 
 == Changelog ==
+= 1.2.0 =
+* Added delete all feature
 
 = 1.1.0 =
 * Added translation support
